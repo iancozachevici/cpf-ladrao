@@ -1,0 +1,56 @@
+Gerar um CPF válido envolve seguir um conjunto de regras específicas estabelecidas pela Receita Federal do Brasil. O objetivo principal é garantir a unicidade e a autenticidade do número, prevenindo fraudes e erros de identificação.
+
+Estrutura do CPF:
+
+O CPF é composto por 11 dígitos divididos em três grupos:
+
+9 dígitos base: XXX.XXX.XXX
+1 dígito verificador: X
+1 dígito verificador: X
+Regras para geração dos dígitos verificadores:
+
+Primeiro dígito verificador (X):
+
+Multiplique cada dígito base pelo seu respectivo peso, conforme a ordem: 10, 9, 8, 7, 6, 5, 4, 3, 2.
+Some os resultados das multiplicações.
+Divida a soma por 11.
+Se o resto da divisão for 0 ou 1, o primeiro dígito verificador é 0. Caso contrário, subtraia o resto de 11 e o resultado será o primeiro dígito verificador.
+Segundo dígito verificador (X):
+
+Repita os passos 1 e 2 do cálculo do primeiro dígito verificador, incluindo o primeiro dígito verificador já obtido no grupo dos dígitos base.
+Divida a soma por 11.
+Se o resto da divisão for 0 ou 1, o segundo dígito verificador é 0. Caso contrário, subtraia o resto de 11 e o resultado será o segundo dígito verificador.
+Exemplo:
+
+Vamos gerar um CPF utilizando os dígitos base 123.456.789:
+
+Cálculo do primeiro dígito verificador:
+
+Multiplicação:
+
+1 * 10 = 10
+2 * 9 = 18
+3 * 8 = 24
+...
+9 * 2 = 18 Soma: 10 + 18 + 24 + ... + 18 = 324
+Divisão: 324 ÷ 11 = 29 com resto 5
+
+Primeiro dígito verificador: 11 - 5 = 6
+
+Cálculo do segundo dígito verificador:
+
+Multiplicação (incluindo o primeiro dígito verificador):
+
+1 * 10 = 10
+2 * 9 = 18
+3 * 8 = 24
+...
+6 * 2 = 12
+9 * 1 = 9 Soma: 10 + 18 + 24 + ... + 12 + 9 = 342
+Divisão: 342 ÷ 11 = 31 com resto 1
+
+Regra de resto 0 ou 1 = 0
+
+Segundo dígito verificador: 0
+
+CPF completo: 123.456.789-60
